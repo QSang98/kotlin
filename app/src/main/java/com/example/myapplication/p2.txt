@@ -1,0 +1,23 @@
+* if-else:
+  
+  fun main(args: Array<String>) {
+   val cap = Cap()
+   cap.tuoi = 9
+   print("Cấp ${cap.tuoi}")
+  }
+
+  class Cap {
+    var tuoi: Int = 0 
+
+    get() = field
+
+    set(value) {
+      field = if (value < 11)
+         1
+      else if (value <=11 && value <= 15)
+         2
+      else 
+         3
+    }
+  } 
+

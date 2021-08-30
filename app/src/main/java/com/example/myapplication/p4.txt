@@ -1,0 +1,9 @@
+*Vòng lặp while:
+ Cách hoạt động:
+ Nếu biểu thức trong while() đạt điều kiện thì công việc trong {} vẫn tiếp tục được thực hiện
+ 
+ Ví dụ: 
+ while (x > 0) {
+    x--
+ }
+ Chương trình sẽ thoát vòng lặp khi nào x <= 0

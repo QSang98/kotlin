@@ -1,0 +1,28 @@
+* when:
+  Trong kotlin, when được dùng thay thế cho switch-case. When hoạt động rất mạnh mẽ, đa năng, đáp ứng được nhiều trường hợp xử lý.
+
+  Cách hoạt động:
+
+  when(<expression>) {
+    <value 1> ->   <statement 1>
+
+    <value 2> ->   <statement 2>
+
+    else      ->   <statement else>
+
+  }
+
+  when lấy giá trị trong <expression> để so sánh với các <value> trước " -> ", nếu trùng khớp với value nào thì <statement> đó sẽ được thực thi. 
+  Nếu tất cả <value> đều không khớp với <expression> thì else sẽ được thực hiện
+
+  Ví dụ:
+  
+  fun main(args: Array) {
+     var tuoi: Int = 1
+     when(tuoi) {
+      1->println("Số 1")
+      2->println("Số 2")
+      3->println("Số 3")
+      else-> println("...")
+     }
+  }

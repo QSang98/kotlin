@@ -1,0 +1,103 @@
+*Int, Float, Double, Long, Short, Byte, Char, Boolean, String
+
+*var, val:
+var có thể thay đổi giá trị và ngược lại đối với val 
+
+fun tong() {
+  var a = 2
+  var b = 3
+  var c = 4
+  c = a + b
+  print(c) // c = 5
+}
+
+fun tong() {
+  var a = 2
+  var b = 3
+  val c = 4
+  c = a + b
+  print(c) // lỗi vì c là giá trị cố định không thể thay đổi
+}
+
+*Custom setter:
+
+fun main(args: Array<String>) {
+   val cap = Cap()
+   cap.tuoi = 9
+   print("Cấp ${cap.tuoi}")
+}
+
+class Cap {
+var tuoi: Int = 0 
+
+ get() = field
+
+ set(value) {
+    field = if (value < 11)
+         1
+    else if (value <=11 && value <= 15)
+         2
+    else 
+         3
+ }
+}
+
+*Custom getter:
+
+fun main(args: Array<String>) {
+   val cap = Cap()
+   cap.tuoi = 9
+   print("Cấp ${cap.tuoi}")
+}
+
+class Cap {
+var tuoi: Int = 0 
+
+ get() = if (field < 11)
+         1
+    else if (field <=11 && field <= 15)
+         2
+    else 
+         3
+ set(value) {
+    field = value
+ }
+}
+
+* Khái niệm null safety:
+  Để báo cho Kotlin biết một biến có thể null, thì phải thêm toán tử " ? " vào đằng sau kiểu dữ liệu. Đó như là một sự nghi ngờ về sự tồn tại của biến.
+  Dấu " ? " cho phép lấy dữ liệu nếu biến đó có giá trị, và sẽ bỏ qua nếu biến là null, chương trình tiếp tục được chạy.
+  ví dụ: 
+  val a: Int? = null
+  var b: Int?
+
+*Phân biệt lateinit, lazy, nullable:
+ - Trong kolin các biến không null cần phải được khởi tạo, nhưng đôi khi điều này không thuận tiện và để xử lý điều đó thì cần sử dụng lateinit, nghĩa là khởi tạo sau,
+   lateinit chỉ dùng cho var và không dùng cho primitive type
+   
+   class Test {
+      lateinit var diem: Diem
+
+      fun Classificate() {
+        diem = Diem()
+        diem.method()  
+      }
+   }
+
+ - Khi muốn biến được khởi tạo chỉ khi chúng ta cần dùng đến nó thì dùng lazy, lazy chỉ dùng cho val
+   class Test{
+      val a: String by lazy { “Hello World” }
+   }
+ - Nullable: Trong Kotlin thì tất cả đều là đối tượng, và sẽ không null trừ khi cần nó null. Một biến có thể null thì dùng "?" sau kiểu dữ liệu thì nó được phép null.
+
+* open keyword: Trong kotlin, mặc định các lớp không được kế thừa, dùng open nghĩa là lớp đó có thể được kế thừa.
+  Ví dụ:
+  class Animal {...}
+  class Cat : Animal {...} // lỗi
+ 
+  open class Animal1 {...}
+  class Dog : Animal1 {...} // chương trình chạy
+ 
+          
+
+

@@ -1,0 +1,53 @@
+* Vòng lặp for:
+  - Duyệt tuần tự hết giá trị trong danh sách:
+    for (i in a..b) {
+    }
+
+ Biến i tự động tăng dần từ a cho tới b.
+ VD:
+ fun main(args: Array) {
+   var gt:Int = 1
+   val n:Int = 6
+   for (i in 1..n)
+    {
+     gt *= i
+    }
+   println("$n!=$gt")
+ }
+ 
+ - Duyệt tuần tự gần hết giá trị trong danh sách:
+ for (i in a until b) {
+ }
+  Biến i tự động tăng dần từ a cho tới gần b.
+ VD:
+ fun main(args: Array) {
+   var sum: Int = 0
+   val n: Int = 6
+   for (i in 1 until n) {
+     sum += i
+   }
+  println("Tổng = $sum")
+ }
+
+ -Điều hướng bước nhảy step:
+  for (i in a .. b step x){
+  }
+ 
+ Biến i tự động tăng dần từ a cho tới b, nhưng mỗi lần duyệt nó tăng theo x đơn vị
+
+ - Điều hướng bước nhảy downTo:
+ for (i in b downTo a) {
+ }
+ Biến i giảm dần từ b đến a mỗi lần 1 đơn vị
+ 
+ for (i in b downTo a step x) {
+ }
+ Biến i giảm dần từ b đến a mỗi lần x đơn vị
+
+ - Lặp tập đối tượng:
+ for (item in collection) {
+   println(item)
+ }
+ 
+ 
+ 
